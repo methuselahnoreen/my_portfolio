@@ -2,15 +2,10 @@
  * YOUR IDENTITY - start here.
  *
  * Everything that says who you are lives in this file: name, handle, photo,
- * socials, email and the Home headline. Every value below is a PLACEHOLDER.
- * Replace the text, or hand this file to your AI assistant and tell it what
- * to put in each field.
- *
- * Page-specific copy (projects, services, testimonials, FAQs) lives in the
- * other files in src/data/ and at the top of each view component.
+ * socials, email and the Home headline.
  */
 
-import { Briefcase, SealCheck, Clock, type Icon } from '@/components/slab'
+import { Trophy, GraduationCap, Clock, type Icon } from '@/components/slab'
 
 export type SocialLink = {
   label: string
@@ -46,31 +41,26 @@ export type Profile = {
 }
 
 export const profile: Profile = {
-  name: 'Your Name',
-  firstName: 'Your Name',
-  handle: '@yourhandle',
-  role: 'PLACEHOLDER - your title',
-  avatarSrc: '/avatar.svg',
-  verifiedLabel: 'PLACEHOLDER - what the tick means (e.g. a certification)',
-  email: 'you@example.com',
-  location: 'PLACEHOLDER - your city or timezone',
-  // Pick any icon from https://phosphoricons.com and import it above.
+  name: 'Methuselah Presbitero',
+  firstName: 'Methuselah',
+  handle: '@methuselahnoreen',
+  role: 'Front-End Dev & UI/UX Designer',
+  avatarSrc: '/headshot.png',
+  verifiedLabel: 'University Scholar, UP Cebu',
+  email: 'methuselahpresbitero@gmail.com',
+  location: 'Cebu City, Philippines (GMT+8)',
   stats: [
-    { value: '0 yrs', label: 'PLACEHOLDER', Icon: Briefcase },
-    { value: '#000', label: 'PLACEHOLDER', Icon: SealCheck },
-    { value: 'GMT+0', label: 'PLACEHOLDER', Icon: Clock },
+    { value: 'Top 15', label: 'of 50+ hackathon teams', Icon: Trophy },
+    { value: '3rd yr', label: 'BS CS, UP Cebu', Icon: GraduationCap },
+    { value: 'GMT+8', label: 'Cebu, Philippines', Icon: Clock },
   ],
-  // The intro types this line, then flies it into the Home headline.
-  // Keep it short: two halves, 5-8 words total.
-  displayName: { line1: 'Your headline here.', line2: 'Keep it short.' },
+  displayName: { line1: 'Making pixels', line2: 'make sense.' },
   hero: {
-    body: 'PLACEHOLDER - one line on what you do and who you do it for.',
-    portraitSrc: '/avatar.svg',
-    portraitAlt: 'Portrait placeholder',
+    body: 'Front-end developer and UI/UX designer who ships, from React interfaces to game visuals and audio.',
+    portraitSrc: '/headshot.png',
+    portraitAlt: 'Headshot of Methuselah Presbitero',
   },
   socials: [
-    { label: 'Facebook profile', href: '#', iconPath: '/icons/facebook.svg' },
-    { label: 'LinkedIn profile', href: '#', iconPath: '/icons/linkedin.svg' },
-    { label: 'Discord profile', href: '#', iconPath: '/icons/discord.svg' },
+    { label: 'GitHub profile', href: 'https://github.com/methuselahnoreen', iconPath: '/icons/ai/github.svg' },
   ],
 }
