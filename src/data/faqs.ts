@@ -9,22 +9,22 @@ export type QA = { q: string; a: string }
 export const FAQS: QA[] = [
   {
     q: 'What do you do?',
-    a: 'PLACEHOLDER - tell me what to put here: the kinds of work you take on, and who it is usually for.',
+    a: 'I am a front-end developer and UI/UX designer. I build responsive interfaces in React, design in Figma, and have done the visual and audio design for a multiplayer game in Godot. With InklusiJobs, my team placed Top 15 of 50+ teams at Innovation Cup 2026.',
   },
   {
     q: 'How fast can you start?',
-    a: 'PLACEHOLDER - tell me what to put here: your usual lead time for small fixes vs. larger projects, and your working hours.',
+    a: 'I am a student, so my availability depends on my class schedule. Tell me your timeline and I will say honestly what I can fit.',
   },
   {
-    q: 'How much do you charge?',
-    a: 'PLACEHOLDER - tell me what to put here: how you price (hourly, per project, retainer) and how a quote is put together.',
+    q: 'What are you looking for?',
+    a: 'Voluntary internships and teams where building interfaces and shaping how they look and feel are both useful. If that sounds like yours, write to me.',
   },
   {
     q: 'Where are you based?',
-    a: 'PLACEHOLDER - tell me what to put here: your location or timezone, and which client timezones you overlap with.',
+    a: 'I am in Cebu City, Philippines (GMT+8). Tell me where your team is and we can work out overlapping hours.',
   },
   {
     q: 'What happens after I write?',
-    a: 'PLACEHOLDER - tell me what to put here: how fast you reply and what the next step looks like.',
+    a: 'I read every message and reply by email, and we can take it from there.',
   },
 ]

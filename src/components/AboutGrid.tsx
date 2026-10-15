@@ -1,33 +1,11 @@
 import type { CSSProperties } from 'react'
-import { ArrowUpRight, MapPin } from '@/components/slab'
+import { MapPin, Star } from '@/components/slab'
 import { profile } from '@/data/profile'
 
-/**
- * AboutGrid - the About view as a fixed viewport.
- *
- * One glass sheet, two columns: who you are on the left, the illustration
- * on the right. Sized to the panel, so nothing here scrolls.
- *
- * The left column is a ladder, not a paragraph block: one display statement,
- * one line of context, then the four things you do - each carrying the marks
- * of the tools it is built with. The tools are the proof, so they are the
- * visual. Swap the marks below for your own (any square SVG/PNG in public/).
- */
-
-const N8N = { src: '/icons/ai/n8n.svg', name: 'n8n' }
-const ZAPIER = { src: '/icons/ai/zapier.svg', name: 'Zapier' }
-const DOCKER = { src: '/icons/ai/docker.svg', name: 'Docker' }
-const CLAUDE = { src: '/icons/ai/claude-color.svg', name: 'Claude' }
-const CODEX = { src: '/icons/ai/codex.svg', name: 'Codex' }
-const GLM = { src: '/icons/ai/zhipu.svg', name: 'GLM' }
-const QWEN = { src: '/icons/ai/qwen.svg', name: 'Qwen' }
-const HERMES = { src: '/icons/ai/hermes.svg', name: 'Hermes' }
-const NAMECHEAP = { src: '/icons/ai/namecheap.svg', name: 'Namecheap' }
-const CLOUDFLARE = { src: '/icons/ai/cloudflare.svg', name: 'Cloudflare' }
-const GITHUB = { src: '/icons/ai/github.svg', name: 'GitHub' }
-const GWS = { src: '/icons/googleworkspace.svg', name: 'Google Workspace' }
-const SLACK = { src: '/icons/ai/slack-color.svg', name: 'Slack' }
-const FIREFLIES = { src: '/icons/ai/fireflies.png', name: 'Fireflies' }
+const REACT  = { src: '/icons/react.svg',        name: 'React' }
+const FIGMA  = { src: '/icons/figma.svg',         name: 'Figma' }
+const GODOT  = { src: '/icons/godotengine.svg',   name: 'Godot' }
+const VSCODE = { src: '/icons/vscode.svg',        name: 'VS Code' }
 
 type Capability = {
   index: string
@@ -36,26 +14,9 @@ type Capability = {
 }
 
 const CAPABILITIES: Capability[] = [
-  {
-    index: '01',
-    title: 'Your role 1',
-    marks: [N8N, ZAPIER, DOCKER],
-  },
-  {
-    index: '02',
-    title: 'Your role 2',
-    marks: [CLAUDE, CODEX, GLM, QWEN, HERMES],
-  },
-  {
-    index: '03',
-    title: 'Your role 3',
-    marks: [CLAUDE, CODEX, NAMECHEAP, CLOUDFLARE, GITHUB],
-  },
-  {
-    index: '04',
-    title: 'Your role 4',
-    marks: [GWS, SLACK, FIREFLIES],
-  },
+  { index: '01', title: 'Front-end development', marks: [REACT, VSCODE] },
+  { index: '02', title: 'UI/UX design',           marks: [FIGMA] },
+  { index: '03', title: 'Game visuals and audio', marks: [GODOT] },
 ]
 
 export default function AboutGrid() {
@@ -64,27 +25,28 @@ export default function AboutGrid() {
       <header className="pgrid__head">
         <span className="pgrid__eyebrow">About</span>
         <h1 className="pgrid__title" id="about-title">
-          {`Hi, Iâ€™m ${profile.firstName}.`}
+          {`Hi, I\u2019m ${profile.firstName}.`}
         </h1>
         <p className="pgrid__lede">
-          PLACEHOLDER - tell me what to put here: one line on what you do.
+          Front-end developer and UI/UX designer, studying Computer Science at UP Cebu.
         </p>
       </header>
 
       <div className="home__glass agrid__glass">
         <div className="agrid__copy">
           <p className="agrid__lead">
-            Your big statement goes here, in one or two lines.
-            <span> A softer second half that finishes the thought.</span>
+            I build interfaces and shape how they look and feel.
+            <span> From React screens to game art and sound, I like seeing a project through.</span>
           </p>
 
           <p className="agrid__note">
-            <strong>Your company name</strong>, and{' '}
-            <a className="agrid__link" href="#">
-              your product
-            </a>{' '}
-            - PLACEHOLDER - tell me what to put here: two sentences on your company, what
-            you sell or build, and who it is for.
+            <strong>3rd-year Computer Science student at UP Cebu.</strong> I led the front end of
+            InklusiJobs, a PWD employment platform (top 15 of 50+ hackathon teams), and the visual
+            and audio design of Last Moon, a networked 1v1 strategy game.{' '}
+            <a className="agrid__link" href="https://github.com/methuselahnoreen">
+              See my code on GitHub
+            </a>
+            .
           </p>
 
           <ul className="agrid__caps" role="list">
@@ -102,22 +64,29 @@ export default function AboutGrid() {
                   ))}
                 </span>
                 <span className="agrid__cap-title">{c.title}</span>
-                <span className="agrid__cap-index" aria-hidden="true">
-                  {c.index}
-                </span>
+                <span className="agrid__cap-index" aria-hidden="true">{c.index}</span>
               </li>
             ))}
           </ul>
 
-          {/* One plate, two cells sharing a mark / title / meta anatomy. */}
           <div className="agrid__bar">
             <span className="agrid__cell">
-              <span className="agrid__cell-mark agrid__cell-mark--img">
-                <img src="/placeholders/badge.svg" alt="" loading="lazy" decoding="async" />
+              <span className="agrid__cell-mark">
+                <Star size={16} weight="fill" aria-hidden="true" />
               </span>
               <span className="agrid__cell-copy">
-                <span className="agrid__cell-title">Credential name</span>
-                <span className="agrid__cell-meta">Credential ID</span>
+                <span className="agrid__cell-title">University Scholar</span>
+                <span className="agrid__cell-meta">UP Cebu — A.Y. 2025–2026, 1st Sem</span>
+              </span>
+            </span>
+
+            <span className="agrid__cell">
+              <span className="agrid__cell-mark">
+                <Star size={16} weight="fill" aria-hidden="true" />
+              </span>
+              <span className="agrid__cell-copy">
+                <span className="agrid__cell-title">College Scholar</span>
+                <span className="agrid__cell-meta">UP Cebu — A.Y. 2025–2026, 2nd Sem</span>
               </span>
             </span>
 
@@ -127,27 +96,37 @@ export default function AboutGrid() {
               </span>
               <span className="agrid__cell-copy">
                 <span className="agrid__cell-title">{profile.location}</span>
-                <span className="agrid__cell-meta">Timezone Â· working hours</span>
+                <span className="agrid__cell-meta">Open to joining a team</span>
               </span>
             </span>
 
-            <a className="agrid__cell agrid__cell--wide" href="#">
-              <span className="agrid__cell-mark agrid__cell-mark--plain">
-                <img src="/placeholders/logo.svg" alt="" loading="lazy" decoding="async" />
-              </span>
+            <div className="agrid__cell agrid__cell--wide">
               <span className="agrid__cell-copy">
-                <span className="agrid__cell-title">Community or affiliation</span>
-                <span className="agrid__cell-meta">Your role there</span>
+                <span className="agrid__cell-title">UP Computer Science Guild</span>
+                <span className="agrid__cell-meta">Logistics · Secretariat · Partnerships &amp; Linkages</span>
               </span>
-              <ArrowUpRight className="agrid__cell-go" size={15} weight="bold" aria-hidden="true" />
-            </a>
+            </div>
+
+            <div className="agrid__cell agrid__cell--wide">
+              <span className="agrid__cell-copy">
+                <span className="agrid__cell-title">DEVCON Cebu</span>
+                <span className="agrid__cell-meta">Programs Committee</span>
+              </span>
+            </div>
+
+            <div className="agrid__cell agrid__cell--wide">
+              <span className="agrid__cell-copy">
+                <span className="agrid__cell-title">Hacktoberfest 2026</span>
+                <span className="agrid__cell-meta">Volunteer — Logistics Committee</span>
+              </span>
+            </div>
           </div>
         </div>
 
         <div className="agrid__portrait">
           <img
-            src="/avatar.svg"
-            alt="Portrait placeholder"
+            src={profile.avatarSrc}
+            alt={`Portrait of ${profile.name}`}
             loading="eager"
             decoding="async"
             width={400}
@@ -158,3 +137,4 @@ export default function AboutGrid() {
     </section>
   )
 }
+

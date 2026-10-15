@@ -64,7 +64,7 @@ export async function submitLead(lead: Lead): Promise<SubmitResult> {
   if (ENDPOINT) {
     const res = await fetch(ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify(lead),
     })
     if (!res.ok) {
@@ -74,7 +74,7 @@ export async function submitLead(lead: Lead): Promise<SubmitResult> {
     return { via: 'webhook' }
   }
 
-  const subject = `Project inquiry from ${lead.firstName} ${lead.lastName}`
+  const subject = `Message from ${lead.firstName} ${lead.lastName} (portfolio)`
   const body = [`Name: ${lead.firstName} ${lead.lastName}`, `Email: ${lead.email}`, '', lead.message].join('\n')
   // encodeURIComponent on every value blocks header injection (CR/LF) and
   // parameter smuggling via & or ?.
